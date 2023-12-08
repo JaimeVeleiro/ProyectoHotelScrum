@@ -9,7 +9,7 @@ public class Hotel {
     private String codPostal;
 
     private Cliente[] aClientes = new Cliente[maxClientes];
-    private Promociones[] aPromociones = new Promocion[maxPromos];
+    private Promociones[] aPromociones = new Promociones[maxPromos];
 
     public Hotel(){
         this.nombre = "Hotel Costa del Sol";
@@ -62,7 +62,7 @@ public class Hotel {
         return "No existe un cliente con ese DNI, comprueba que esta bien escrito";
     }
 
-    public boolean addPromo(int edadMin, int edadMax , String duracion, String descuento,int codigoPromo){
+    public boolean addPromo(int edadMin, int edadMax , int duracion, int descuento,int codigoPromo){
         for(int i=0;i<aPromociones.length;i++){
             if(aPromociones[i]==null){
                 Promociones nuevaPromocion = new Promociones (edadMin,edadMax,duracion,descuento,codigoPromo);
