@@ -8,7 +8,7 @@ public class Hotel {
     private String email;
     private String codPostal;
 
-    private Cliente[] aClientes = new Cliente[maxClientes];
+    private Clientes[] aClientes = new Clientes[maxClientes];
     private Promociones[] aPromociones = new Promociones[maxPromos];
 
     public Hotel(){
@@ -23,7 +23,7 @@ public class Hotel {
     public boolean addCliente(String nombre, String dni, String apellidos, String direccion, String email, String telefono, int edad, String fechaNacimineto){
         for(int i=0; i<aClientes.length;i++){
             if(aClientes[i]== null){
-                Cliente miCliente = new Cliente(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
+                Clientes miCliente = new Clientes(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
                 aClientes[i] = miCliente;
                 
                 return true;
@@ -82,7 +82,7 @@ public class Hotel {
             sCompCodigoPromo = String.valueOf(aPromociones[i].getCodigoPromo());
 
                 if(sCompCodigoPromo.compareTo(sCodigoPromo) == 0){
-                    aPromociones[i] == null;
+                    aPromociones[i] = null;
                     return true;
                 }
         }
