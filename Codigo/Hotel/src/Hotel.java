@@ -55,7 +55,7 @@ public class Hotel {
         for(int i=0;i<aClientes.length;i++){
             if(dni.compareTo(aClientes[i].getDni())==0){
                 return aClientes[i].getDni() + "|" + aClientes[i].getNombre() + "|" + aClientes[i].getApellidos()+ "|" + aClientes[i].getDireccion()
-                + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNacimiento()+ "|" + aClientes[i].getTelefono();
+                + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono();
             }
         }
     }
@@ -79,7 +79,7 @@ public class Hotel {
         String sCompCodigoPromo;
 
         for(int i = 0; i<aPromociones.length;i++){
-            sCompCodigoPromo = String.valueOf(aPromociones[i].getCodigoPromo());
+            sCompCodigoPromo = String.valueOf(aPromociones[i].getCodPromocion());
 
                 if(sCompCodigoPromo.compareTo(sCodigoPromo) == 0){
                     aPromociones[i] = null;
