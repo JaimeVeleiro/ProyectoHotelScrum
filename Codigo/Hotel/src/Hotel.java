@@ -21,8 +21,8 @@ public class Hotel {
 
     public boolean addCliente(String nombre, String dni, String apellidos, String direccion, String email, String telefono, int edad, String fechaNacimineto){
         for(int i=0; i<aClientes.length;i++){
-             Cliente miCliente = new Cliente(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
             if(aClientes[i]== null){
+                Cliente miCliente = new Cliente(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
                 aClientes[i] = miCliente;
                 
                 return true;
