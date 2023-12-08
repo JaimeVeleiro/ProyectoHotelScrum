@@ -20,8 +20,8 @@ public class Hotel {
     }
 
     public boolean addCliente(String nombre, String dni, String apellidos, String direccion, String email, String telefono, int edad, String fechaNacimineto){
-        Cliente miCliente = new Cliente(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
         for(int i=0; i<aClientes.length;i++){
+             Cliente miCliente = new Cliente(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
             if(aClientes[i]== null){
                 aClientes[i] = miCliente;
                 
@@ -63,8 +63,8 @@ public class Hotel {
 
     public boolean addPromo(int edadMin, int edadMax , String duracion, String descuento,int codigoPromo){
         for(int i=0;i<aPromociones.length;i++){
-            Promociones nuevaPromocion = new Promociones (edadMin,edadMax,duracion,descuento,codigoPromo);
             if(aPromociones[i]==null){
+                Promociones nuevaPromocion = new Promociones (edadMin,edadMax,duracion,descuento,codigoPromo);
                 aPromociones[i] = nuevaPromocion;
                 return true;
             }
