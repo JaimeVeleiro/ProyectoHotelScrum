@@ -1,6 +1,7 @@
 // Hotel.java
 public class Hotel {
     private static final int maxClientes =1000;
+    private static final int maxPromos =30;
     private String nombre;
     private String direccion;
     private String telefono;
@@ -8,7 +9,7 @@ public class Hotel {
     private String codPostal;
 
     private Cliente[] aClientes = new Cliente[maxClientes];
-    private Promociones[] aPromociones = new Promocion[30];
+    private Promociones[] aPromociones = new Promocion[maxPromos];
 
     public Hotel(){
         this.nombre = "Hotel Costa del Sol";
