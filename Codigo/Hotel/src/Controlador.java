@@ -82,13 +82,13 @@ public class Controlador {
                 int edadMax, edadMin, descuento, duracion;
 
                 Scanner sc = new Scanner(System.in);
-                System.out.println("DNI sin guion");
+                System.out.println("Edad maxima");
                 edadMax = Integer.valueOf(sc.nextLine());
-                System.out.println("Nombre");
+                System.out.println("Edad minima");
                 edadMin = Integer.valueOf(sc.nextLine());
-                System.out.println("Apellidos");
+                System.out.println("Descuento");
                 descuento = Integer.valueOf(sc.nextLine());
-                System.out.println("Direccion");
+                System.out.println("Duracion");
                 duracion = Integer.valueOf(sc.nextLine());
                 
                 miHotelControlador.addPromo(i + 1, edadMax, edadMin, descuento, duracion, i);
