@@ -20,18 +20,12 @@ public class Hotel {
 
     }
 
-    public boolean addCliente(String nombre, String dni, String apellidos, String direccion, String email, String telefono, int edad, String fechaNacimineto){
-        for(int i=0; i<aClientes.length;i++){
-            if(aClientes[i]== null){
+    public void addCliente(String nombre, String dni, String apellidos, String direccion, String email, String telefono, int edad, String fechaNacimineto, int i){
+       
                 Clientes miCliente = new Clientes(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
                 aClientes[i] = miCliente;
-                
-                return true;
-            }
-        }
-       
-        return false;
-
+    
+        
     }
 
     public boolean removeCliente(String dni){
@@ -47,10 +41,7 @@ public class Hotel {
     }
 
     public String showCliente(String dni){
-        if (aClientes[0]== null){
-            return "No hay clientes";
-        }else{
-
+       
         
         for(int i=0;i<aClientes.length;i++){
             if(dni.compareTo(aClientes[i].getDni())==0){
@@ -58,21 +49,21 @@ public class Hotel {
                 + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono();
             }
         }
-    }
+    
         return "No existe un cliente con ese DNI, comprueba que esta bien escrito";
     }
 
-    public boolean addPromo(int edadMin, int edadMax , int duracion, int descuento,int codigoPromo){
-        for(int i=0;i<aPromociones.length;i++){
-            if(aPromociones[i]==null){
-                Promociones nuevaPromocion = new Promociones (edadMin,edadMax,duracion,descuento,codigoPromo);
-                aPromociones[i] = nuevaPromocion;
-                return true;
-            }
+     public boolean promCliente(int edad){
 
-        }
         return false;
+        }
+
+    public void addPromo(int edadMin, int edadMax , int duracion, int descuento,int codigoPromo, int i){
+        
+                Promociones nuevaPromocion = new Promociones (edadMin,edadMax,duracion,descuento,codigoPromo);
+                aPromociones[i] = nuevaPromocion;      
     }
+
 
     public boolean removePromo(int codigoPromo){
         String sCodigoPromo = String.valueOf(codigoPromo);
