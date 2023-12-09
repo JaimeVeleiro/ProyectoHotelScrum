@@ -8,8 +8,8 @@ public class Hotel {
     private String email;
     private String codPostal;
 
-    private Clientes[] aClientes = new Clientes[maxClientes];
-    private Promociones[] aPromociones = new Promociones[maxPromos];
+    public Clientes[] aClientes = new Clientes[maxClientes];
+    public Promociones[] aPromociones = new Promociones[maxPromos];
 
     public Hotel(){
         this.nombre = "Hotel Costa del Sol";
