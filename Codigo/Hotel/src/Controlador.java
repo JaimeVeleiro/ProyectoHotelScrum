@@ -92,7 +92,6 @@ public class Controlador {
                 duracion = Integer.valueOf(sc.nextLine());
                 
                 miHotelControlador.addPromo(i + 1, edadMax, edadMin, descuento, duracion, i);
-                sc.close();
 
                 return true;
             }
