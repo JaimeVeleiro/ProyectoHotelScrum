@@ -7,8 +7,9 @@ public class Clientes {
     private String telefono;
     private int edad;
     private String fechaNac;
+    private int promocion;
 
-    public Clientes(String dni, String nombre, String apellidos, String direccion, String email, String telefono, int edad, String fechaNac){
+    public Clientes(String dni, String nombre, String apellidos, String direccion, String email, String telefono, int edad, String fechaNac,  int promocion){
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -17,6 +18,7 @@ public class Clientes {
         this.telefono = telefono;
         this.edad = edad;
         this.fechaNac = fechaNac;
+        this.promocion = promocion;
     }
 
     public String getDni() {
@@ -81,5 +83,13 @@ public class Clientes {
 
     public void setFechaNac(String fechaNac) {
         this.fechaNac = fechaNac;
+    }
+
+    public void setPromocion(int promocion) {
+        this.promocion = promocion;
+    }
+    
+    public int getPromocion() {
+        return promocion;
     }
 }
