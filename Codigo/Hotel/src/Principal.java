@@ -39,8 +39,12 @@ public class Principal {
                     System.out.println(miControlador.compRemoveCliente());
                     
                 case 6:
-                    System.out.println("Hasta la próxima!!");
-                    break;
+                    System.out.println(miControlador.compShowPromos());
+                break;
+                case 7:
+                System.out.println("Hasta la próxima!!");
+
+                break;
                 default:
                     System.out.println("Opcion no valida");
             }
