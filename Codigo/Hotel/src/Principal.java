@@ -6,7 +6,7 @@ public class Principal {
         Scanner sc = new Scanner(System.in);
         int opcion = 1;
         
-        while (opcion != 6){
+        while (opcion != 7){
             System.out.println("1.- Añadir Cliente\n2.- Eliminar Cliente\n3.- Consultar Cliente\n4.- Añadir Promoción\n5.- Eliminar Promoción\n6.-Salir");
             opcion = Integer.valueOf(sc.nextLine());
 
