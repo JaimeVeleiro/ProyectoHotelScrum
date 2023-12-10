@@ -120,7 +120,7 @@ public class Controlador {
     }
 
     public String compShowPromos(){
-        if (miHotelControlador.aPromociones[0] == null){
+        if (miHotelControlador.aPromociones == null){
             return "No hay ninguna Promoción";
 
         } else{
