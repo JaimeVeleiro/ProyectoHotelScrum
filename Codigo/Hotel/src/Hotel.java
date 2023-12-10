@@ -47,6 +47,7 @@ public class Hotel {
             if(dni.compareTo(aClientes[i].getDni())==0){
                 return aClientes[i].getDni() + "|" + aClientes[i].getNombre() + "|" + aClientes[i].getApellidos()+ "|" + aClientes[i].getDireccion()
                 + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono();
+                
             }
         }
     
@@ -79,6 +80,8 @@ public class Hotel {
         }
         return false;
     }
+
+
 
 
 
