@@ -115,7 +115,7 @@ public class Hotel {
         String sCompCodigoPromo;
 
         for(int i = 0; i < aPromociones.length;i++){
-            if (aPromociones[i].getCodPromocion() != null){
+            if (aPromociones[i] != null){
                 sCompCodigoPromo = String.valueOf(aPromociones[i].getCodPromocion());
     
                 if(sCompCodigoPromo.compareTo(sCodigoPromo) == 0){
