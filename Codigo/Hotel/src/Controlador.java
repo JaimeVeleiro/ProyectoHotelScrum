@@ -100,7 +100,7 @@ public class Controlador {
     }
 
     public String compRemovePromo(){
-        if (miHotelControlador.aClientes[0] == null){
+        if (miHotelControlador.aPromociones == null){
             return "No hay ninguna Promocion actualmente";
             
         } else {
