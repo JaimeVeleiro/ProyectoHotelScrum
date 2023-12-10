@@ -7,7 +7,7 @@ public class Principal {
         int opcion = 1;
         
         while (opcion != 7){
-            System.out.println("1.- Añadir Cliente\n2.- Eliminar Cliente\n3.- Consultar Cliente\n4.- Añadir Promoción\n5.- Eliminar Promoción\n6.-Salir");
+            System.out.println("1.- Añadir Cliente\n2.- Eliminar Cliente\n3.- Consultar Cliente\n4.- Añadir Promoción\n5.- Eliminar Promoción\n6.- Consultar Promociones\n7.- Salir");
             opcion = Integer.valueOf(sc.nextLine());
 
             switch (opcion){
@@ -36,7 +36,7 @@ public class Principal {
 
                     break;
                 case 5:
-                    System.out.println(miControlador.compRemoveCliente());
+                    System.out.println(miControlador.compRemovePromo());
                     
                 case 6:
                     System.out.println(miControlador.compShowPromos());

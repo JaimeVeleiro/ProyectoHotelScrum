@@ -20,10 +20,12 @@ public class Hotel {
 
     }
 
-    public void addCliente(String nombre, String dni, String apellidos, String direccion, String email, String telefono, int edad, String fechaNacimineto, int i){
+    public boolean addCliente(String nombre, String dni, String apellidos, String direccion, String email, String telefono, int edad, String fechaNacimineto, int i){
        
-        Clientes miCliente = new Clientes(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
+        Clientes miCliente = new Clientes(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto,0);
         aClientes[i] = miCliente;
+        System.out.println(showCliente(dni));
+        return true;
     
         
     }
@@ -100,10 +102,6 @@ public class Hotel {
         return "No existe un cliente con ese DNI, comprueba que esta bien escrito";
     }
 
-     public boolean promCliente(int edad){
-
-        return false;
-        }
 
     public void addPromo(int edadMin, int edadMax , int duracion, int descuento,int codigoPromo, int i){
         
