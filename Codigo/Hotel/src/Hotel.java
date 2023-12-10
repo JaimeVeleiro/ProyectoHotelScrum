@@ -114,13 +114,16 @@ public class Hotel {
         String sCodigoPromo = String.valueOf(codigoPromo);
         String sCompCodigoPromo;
 
-        for(int i = 0; i<aPromociones.length;i++){
-            sCompCodigoPromo = String.valueOf(aPromociones[i].getCodPromocion());
-
+        for(int i = 0; i < aPromociones.length;i++){
+            if (aPromociones[i].getCodPromocion() != null){
+                sCompCodigoPromo = String.valueOf(aPromociones[i].getCodPromocion());
+    
                 if(sCompCodigoPromo.compareTo(sCodigoPromo) == 0){
                     aPromociones[i] = null;
                     return true;
                 }
+
+            }
         }
         return false;
     }
