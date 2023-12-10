@@ -13,7 +13,7 @@ public class Hotel {
 
     public Hotel(){
         this.nombre = "Hotel Costa del Sol";
-        this.direccion = "Calle falsa nº 123";
+        this.direccion = "Calle falsa nยบ 123";
         this.telefono = "690 420 777";
         this.email = "hotelchingon@gmail.com";
         this.codPostal = "42069";
@@ -22,8 +22,8 @@ public class Hotel {
 
     public void addCliente(String nombre, String dni, String apellidos, String direccion, String email, String telefono, int edad, String fechaNacimineto, int i){
        
-                Clientes miCliente = new Clientes(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
-                aClientes[i] = miCliente;
+        Clientes miCliente = new Clientes(dni,nombre,apellidos,direccion,email,telefono,edad,fechaNacimineto);
+        aClientes[i] = miCliente;
     
         
     }
@@ -41,13 +41,59 @@ public class Hotel {
     }
 
     public String showCliente(String dni){
-       
-        
         for(int i=0;i<aClientes.length;i++){
+            
             if(dni.compareTo(aClientes[i].getDni())==0){
-                return aClientes[i].getDni() + "|" + aClientes[i].getNombre() + "|" + aClientes[i].getApellidos()+ "|" + aClientes[i].getDireccion()
-                + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono();
                 
+                if (aPromociones[0] != null){
+                    String[] a = new String[maxPromos];
+                    int[] b = new int[maxPromos];
+                    int k = 0;
+                    
+                    for (int j = 0; j < aPromociones.length && aPromociones[j] != null; j++){
+                        
+                        if (aClientes[i].getEdad() <= aPromociones[j].getEdadMax() && aClientes[i].getEdad() >= aPromociones[j].getEdadMin()){
+                            a[k] = String.valueOf(aPromociones[j].getCodPromocion());
+                            b[k] = aPromociones[j].getDescuento();
+                            //aClientes[i].setPromocion(aPromociones[j].getCodPromocion());
+                            k++;
+                        }
+                        
+                    }
+                    
+                    if (a[0] == null){
+                        aClientes[i].setPromocion(0);
+                        
+                    } else if (a[1] == null){
+                        
+                        aClientes[i].setPromocion(Integer.valueOf(a[0]));
+                    } else {
+                        
+                        int iMax = 0;
+                        
+                        for (int x = 0; x < a.length && a[x] != null; x++){
+                            
+                            if (iMax < b[x]){
+                                iMax = x;
+                            }
+                        }
+                        aClientes[i].setPromocion(Integer.valueOf(a[iMax]));
+                    }
+                    
+                }
+
+                if (aPromociones[0] != null){
+                    int z = Integer.valueOf(aClientes[i].getPromocion()) - 1;
+
+                    return "Datos CLiente:\n" + aClientes[i].getDni() + "|" + aClientes[i].getNombre() + "|" + aClientes[i].getApellidos()+ "|" + aClientes[i].getDireccion()
+                    + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono() 
+                    + "|" + aClientes[i].getPromocion() + "\nMejor Promocion:\nCodigo " + aPromociones[z].getCodPromocion() + " | Descuento " + aPromociones[z].getDescuento() 
+                    + "% | Duracion (Dias) " + aPromociones[z].getDuracion();
+                }
+
+                return aClientes[i].getDni() + "|" + aClientes[i].getNombre() + "|" + aClientes[i].getApellidos()+ "|" + aClientes[i].getDireccion()
+                + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono() 
+                + "|0";
             }
         }
     
@@ -61,8 +107,8 @@ public class Hotel {
 
     public void addPromo(int edadMin, int edadMax , int duracion, int descuento,int codigoPromo, int i){
         
-                Promociones nuevaPromocion = new Promociones (edadMin,edadMax,duracion,descuento,codigoPromo);
-                aPromociones[i] = nuevaPromocion;      
+        Promociones nuevaPromocion = new Promociones (edadMin,edadMax,duracion,descuento,codigoPromo);
+        aPromociones[i] = nuevaPromocion;      
     }
 
 
@@ -80,8 +126,6 @@ public class Hotel {
         }
         return false;
     }
-
-
 
 
 

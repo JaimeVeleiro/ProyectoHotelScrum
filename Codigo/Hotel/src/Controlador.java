@@ -119,4 +119,20 @@ public class Controlador {
         }
     }
 
+    public String compShowPromos(){
+        if (miHotelControlador.aPromociones[0] == null){
+            return "No hay ninguna Promoción";
+
+        } else{
+            System.out.println("Codigo Promoción | Edad Máxima | Edad Mínima | Descuento (%) | Duración (Días)");
+
+            for (int i = 0; i < miHotelControlador.aPromociones.length && miHotelControlador.aPromociones[i] != null; i++){
+                System.out.println(miHotelControlador.aPromociones[i].getCodPromocion() + " | " + miHotelControlador.aPromociones[i].getEdadMax() + " | " + 
+                miHotelControlador.aPromociones[i].getEdadMin() + " | " + miHotelControlador.aPromociones[i].getDescuento() + " | " + 
+                miHotelControlador.aPromociones[i].getDuracion());
+            }
+            return "Listo!!";
+        }
+    }
+
 }
