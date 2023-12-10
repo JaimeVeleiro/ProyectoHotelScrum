@@ -41,12 +41,59 @@ public class Hotel {
     }
 
     public String showCliente(String dni){
-       
-        
         for(int i=0;i<aClientes.length;i++){
+            
             if(dni.compareTo(aClientes[i].getDni())==0){
+                
+                if (aPromociones[0] != null){
+                    String[] a = new String[maxPromos];
+                    int[] b = new int[maxPromos];
+                    int k = 0;
+                    
+                    for (int j = 0; j < aPromociones.length && aPromociones[j] != null; j++){
+                        
+                        if (aClientes[i].getEdad() <= aPromociones[j].getEdadMax() && aClientes[i].getEdad() >= aPromociones[j].getEdadMin()){
+                            a[k] = String.valueOf(aPromociones[j].getCodPromocion());
+                            b[k] = aPromociones[j].getDescuento();
+                            //aClientes[i].setPromocion(aPromociones[j].getCodPromocion());
+                            k++;
+                        }
+                        
+                    }
+                    
+                    if (a[0] == null){
+                        aClientes[i].setPromocion(0);
+                        
+                    } else if (a[1] == null){
+                        
+                        aClientes[i].setPromocion(Integer.valueOf(a[0]));
+                    } else {
+                        
+                        int iMax = 0;
+                        
+                        for (int x = 0; x < a.length && a[x] != null; x++){
+                            
+                            if (iMax < b[x]){
+                                iMax = x;
+                            }
+                        }
+                        aClientes[i].setPromocion(Integer.valueOf(a[iMax]));
+                    }
+                    
+                }
+
+                if (aPromociones[0] != null){
+                    int z = Integer.valueOf(aClientes[i].getPromocion()) - 1;
+
+                    return "Datos CLiente:\n" + aClientes[i].getDni() + "|" + aClientes[i].getNombre() + "|" + aClientes[i].getApellidos()+ "|" + aClientes[i].getDireccion()
+                    + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono() 
+                    + "|" + aClientes[i].getPromocion() + "\nMejor Promocion:\nCodigo " + aPromociones[z].getCodPromocion() + " | Descuento " + aPromociones[z].getDescuento() 
+                    + "% | Duracion (Dias) " + aPromociones[z].getDuracion();
+                }
+
                 return aClientes[i].getDni() + "|" + aClientes[i].getNombre() + "|" + aClientes[i].getApellidos()+ "|" + aClientes[i].getDireccion()
-                + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono();
+                + "|" + aClientes[i].getEdad()+ "|" + aClientes[i].getEmail()+ "|" + aClientes[i].getFechaNac()+ "|" + aClientes[i].getTelefono() 
+                + "|0";
             }
         }
     
