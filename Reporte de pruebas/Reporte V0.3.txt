@@ -1,1 +1,0 @@
-Se han realizado pruebas en las clases promociones y clientes sin ningun fallo aparente,comprobando varias veces y con varios valores para buscar posibles errores en el codigo 
