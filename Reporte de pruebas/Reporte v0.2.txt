@@ -1,0 +1,3 @@
+* Fallo a nivel de interfaz de duplicidad de información al añadir clientes, se muestran varias veces algunas lineas
+* Se devuelven de forma poco clara la informacion de los clientes y las promociones llegando a ser un poco tediosa.
+* No se pueden ver las promociones que hay actualmente subidas.

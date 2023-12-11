@@ -1,0 +1,4 @@
+En este reporte de pruebas se exponen los siguientes problemas y errores:
+* Falta un maximo de promociones, no se indica correctamente siguiendo el formato que se habló en la reunión. Es necesario seguir el formato seguido en los clientes para aclarar.
+* Fallo en addCliente: Modificaciones en la creacion de clientes. Errores sintacticos y de adaptación de la clase ante las demás clases
+* Fallo en show cliente: Labores del controlador en el main por error. Hay errores en el show Clientes dado el diseño entregado. Se debe solucionar el problema en la clase Controlador.

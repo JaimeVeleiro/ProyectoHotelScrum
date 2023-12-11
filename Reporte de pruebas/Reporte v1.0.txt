@@ -1,0 +1,10 @@
+* Fallos en la implementación del metodo ShowPromociones en la salida de la información. No se muestra bien la información.
+* Solucionado el error anterior, hay fallos en el Metodo removePromociones dado que hace referencia al array de clientes.
+* No funciona correctamente el método removePromociones, al borrar mas de uno da errores.
+* Si se elimina la primera promocion, se dejan de ver todas las promociones.
+* El método addCliente da fallos con las modificaciones de show cliente, es necesario que ne sea void para poder uasrlo correctamente.
+* El array de Promociones no se recorre correctamente cuando se elimina alguna Promoción, dado que en cuanto se encuentra una posicion null, deja de mirarlo.
+* En la clase Principal falta un caso, hay solo 6 opciones en el menu, falta la opcion Consultar Promociones.
+
+
+Estas Pruebas han consistido en insertar muchas promociones y muchos clientes e ir eliminando registros en todas las posiciones, intentando siempre hacer que el programa falle después de analizar el código.
