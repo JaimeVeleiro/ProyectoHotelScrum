@@ -1,3 +1,4 @@
+*Implementado metodo ShowPromociones para comprobar todas las promociones existentes.
 * Fallos en la implementación del metodo ShowPromociones en la salida de la información. No se muestra bien la información.
 * Solucionado el error anterior, hay fallos en el Metodo removePromociones dado que hace referencia al array de clientes.
 * No funciona correctamente el método removePromociones, al borrar mas de uno da errores.
